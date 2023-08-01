@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a>
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'>
+    </div>
+    <script>
+        const img = document.querySelector('img');
+
+        console.log(img);
+        // Neste modelo vocÊ pega o atributo e atributo customizado
+        console.log('getAttribute', img.getAttribute('src'));
+        // Neste modelo somente atributo
+        console.log('src', img.src);
+        // Aqui como objeto array
+        console.log('[src]', img['src']);
+
+        console.log('alt', img.alt);
+
+        console.log('Elemento "img"..........');
+        // Node Type = 1 é elemento
+        console.log('Node Type', img.nodeType);
+        // Node Name
+        console.log('Node Name', img.nodeName);
+
+        // Usando o nó
+        const src = img.getAttributeNode('src');
+        console.log('Atributo "src"...........');
+        console.log('NodeType', src.nodeType);
+        console.log('NodeName', src.nodeName);
+        console.log('NodeValue', src.nodeValue);
+
+        const link = document.querySelector('a');
+        console.log('Elemento "a".............');
+        console.log('href', link.href);
+        console.log('firstChild.nodeType', link.firstChild.nodeType);
+        link.firstChild.nodeValue = 'Novo Texto';
+
+    </script>
+</body>
+
+</html>

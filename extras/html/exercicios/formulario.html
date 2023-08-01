@@ -1,0 +1,57 @@
+<h1>Formulário</h1>
+
+<form action="#" method="post">
+    <input type="hidden" name="escondido" value="qualquer">
+
+    <input type="text" name="name" id="name">
+
+    <input type="password" name="password" id="password">
+
+    <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+
+    <div>
+        <input type="radio" name="tipo" id="tipo1" value="admin">Admin
+        <input type="radio" name="tipo" id="tipo2" value="regular">Regular
+    </div>
+
+    <div>
+        <input type="checkbox" name="ativo" id="ativo">Ativo
+    </div>
+
+    <select name="estado" id="estado">
+        <option value="" selected disabled hidden>Selecione</option>
+        <optgroup label="Grupo">
+            <option value="ac">Acre</option>
+            <option value="ba">Bahia</option>
+        </optgroup>
+        <option value="ce">Ceara</option>
+    </select>
+
+    <select name="opcao" id="opcao" multiple size="5">
+        <option value="op01">Opção 01</option>
+        <option value="op02">Opção 02</option>
+        <option value="op03">Opção 03</option>
+        <option value="op04">Opção 04</option>
+        <option value="op05">Opção 05</option>
+        <option value="op06">Opção 06</option>
+        <option value="op07">Opção 07</option>
+    </select>
+
+    <button formaction="" formmethod="" type="submit">Incluir</button> // Propriedade "formaction" faz com que possa
+    enviar para
+    destinos diferentes o mesmo formulário.
+</form>
+
+<style>
+    input,
+    textarea,
+    select {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: inline;
+    }
+</style>

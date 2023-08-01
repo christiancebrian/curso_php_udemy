@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>
+        document.getElementById('primeiro').classList.add('destaque');
+
+        // Com getElements ele pega todos os elementos
+        const divs = document.getElementsByTagName('div');
+
+        // Transformando em array a constante, que permite fazer mais coisas
+        Array.from(divs).forEach(e => e.classList.remove('destaque'));
+
+        // Ou também pode fazer isso
+        const divArray = [...divs];
+        divArray.forEach(e => e.classList.add('destaque'));
+
+        const ultimosElementos = document.getElementsByClassName('ultimo');
+
+        // Fazendo um for dentro de um elemento
+        for (let e of ultimosElementos) {
+            e.classList.remove('destaque');
+        }
+    </script>
+</body>
+
+</html>

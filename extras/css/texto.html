@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        /* ... */
+        * {
+            margin: 0;
+        }
+
+        html {
+            font-size: 28px;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        div {
+            font-size: 50px;
+        }
+
+        p {
+            /* font-size: 1em; */
+            /* font-size: 100%; */
+            /* font-size: 16px; */
+            /* font-size: 12pt; */
+
+            font-size: 2.2em;
+            /* Usa como base o font-size do elemento pai */
+            font-size: 2.2rem;
+            /* Usa como base o font-size do documento ou raiz */
+
+            font-family: monospace;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            font-weight: 400;
+            /* Peso da font 'bold = 700' */
+
+            /* Espaço entre as palavras */
+            word-spacing: 10px;
+            /* Espaço entre as letras */
+            letter-spacing: 20px;
+            /* Espaço entre linhas */
+            line-height: 1.8em;
+        }
+
+        .botao {
+            font-size: 28px;
+            text-decoration: none;
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #ffffff;
+            background: tomato;
+            box-shadow: 2px 2px 1px 1px #000;
+        }
+
+        .destaque:active {
+            box-shadow: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a>
+</body>
+
+</html>

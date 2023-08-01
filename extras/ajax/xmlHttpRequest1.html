@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>XMLHttpRequest #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Estados</h1>
+
+    <script>
+        function ajax(config) {
+            // Instanciando o objeto
+            const xhr = new XMLHttpRequest();
+            xhr.open(config.method, config.url, true);
+
+            // Função dentro do objeto config
+            xhr.onload = e => {
+                if (xhr.status === 200) {
+                    config.sucesso(xhr.response);
+                } else if (xhr.status >= 400) {
+                    config.erro({
+                        code: xhr.status,
+                        text: xhr.statusText
+                    })
+                }
+            }
+
+            // Envio da requisição
+            xhr.send();
+        }
+
+        // Função criando a tabela em caso de sucesso
+        function criarTabela(estados) {
+            // Criando uma tabela com a resposta
+            const linhas = estados.map(estado => {
+                // Crando a primeira celula
+                const tdId = document.createElement('td');
+                tdId.innerHTML = estado.id;
+                // Crando a segunda celula
+                const tdNome = document.createElement('td');
+                tdNome.innerHTML = estado.nome;
+                // Crando a primeira celula
+                const tdSigla = document.createElement('td');
+                tdSigla.innerHTML = estado.sigla;
+
+                // Agora crando a linha e adicionando as celulas dentro
+                const tr = document.createElement('tr');
+                tr.appendChild(tdId);
+                tr.appendChild(tdNome);
+                tr.appendChild(tdSigla);
+
+                // Retornando a função 
+                return tr;
+            })
+
+            // Criando a tabela
+            const tabela = document.createElement('table');
+            linhas.forEach(linha => tabela.appendChild(linha));
+            document.body.appendChild(tabela);
+        }
+
+        // Chamando a função e passando os parametros do objeto
+        ajax({
+            url: "dados/estados.json",
+            method: "GET",
+            // Função sucesso
+            sucesso(resposta) {
+                const estados = JSON.parse(resposta);
+                criarTabela(estados);
+            },
+            // Função erro
+            erro(e) {
+                const msg = document.createTextNode(`${e.code}: ${e.text}`);
+                document.body.appendChild(msg);
+            }
+        });
+    </script>
+</body>

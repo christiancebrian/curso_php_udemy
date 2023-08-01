@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./">Página Inicial</a>
+            <a href="./exercicios/teste.html" link-interno>Página Teste</a>
+            <a href="./exercicios/tag.html" link-interno>Tags HTML</a>
+            <a href="./exercicios/listas.html" link-interno>Listas</a>
+            <a href="./exercicios/lista-aninhada.html" link-interno>Listas Aninhadas</a>
+            <a href="./exercicios/links.html" link-interno>Links</a>
+            <a href="./exercicios/tabela.html" link-interno>Tabela</a>
+            <a href="./exercicios/formulario.html" link-interno>Formulário</a>
+            <a href="./exercicios/imagem.html" link-interno>Imagens</a>
+            <a href="./exercicios/video.html" link-interno>Vídeo</a>
+        </nav>
+        <h1>Exercicios HTML</h1>
+    </header>
+    <aside>
+        <p>Lateral</p>
+    </aside>
+    <main>
+        <section id="conteudo">
+            <h3>Contéudo</h3>
+            <div id="conteudo" style="border: .3rem solid #f00; margin: 1rem; padding: 1rem;"></div>
+        </section>
+
+    </main>
+    <footer>
+        <h3>Rodapé</h3>
+    </footer>
+    <script>
+        document.querySelectorAll('[link-interno]').forEach(link => {
+            const conteudo = document.getElementById('conteudo');
+            link.onclick = function (e) {
+                e.preventDefault();
+                fetch(link.href).then(resp => resp.text()).then(html => conteudo.innerHTML = html);
+            }
+        });
+    </script>
+</body>
+
+</html>

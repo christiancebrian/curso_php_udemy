@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* * {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* .tag {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* #aprovados {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Neste caso pega todos os filhos diretos 
+        #aninhado>div {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Aqui irá pegar todas as sections que estiver como filho independente do nível
+        #aninhado section {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Todo seletor ul que for irmão (mesmo nível) de p diretamente, não atendendo aos demais filhos ul
+        p + ul {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Filhos do mesmo pai (estão no mesmo nível, indepedente se são irmão próximos)
+        p ~ ol {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /* Todos os atributos dentro de elementos com nome feira 
+        [feira] {
+            color: #ff0;
+            background-color: #f77;
+        } 
+           Atributo com valor, sendo mais especifico (de acordo com o valor)
+        [feira=casa] {
+            color: #ff0;
+            background-color: #f77;
+        }
+           Atributo com valor, sendo mais especifico (não tendo o valor por completo mas separados por espaço)
+        [feira~=escritorio] {
+            color: #ff0;
+            background-color: #f77;
+        }
+           Atributo com valor, sendo mais especifico (busca todos valores que possuem 'sa')
+        [feira*=sa] {
+            color: #ff0;
+            background-color: #f77;
+        }*/
+
+        /* Todo elemento 'span' que for o '1º' filho de outro elemento
+        span:nth-child(1) {
+            color: #ff0;
+            background-color: #f77;
+        } */
+
+        /*   Todos os filhos impares do elemento 'section' 
+        section > :nth-child(odd) {
+            color: #ff0;
+            background-color: #f77;
+        }
+             Todos os filhos pares do elemento 'section' 
+        section > :nth-child(even) {
+            color: #ff0;
+            background-color: #f77;
+        }*/
+
+        /*   Mesma configuração para mais de um elemento, basta separar por ','
+        ul, p {
+            color: #ff0;
+            background-color: #f77; 
+        } */
+
+        /*   Pegara o elemento do tipo 'span' que é o '2º' filho dentro de uma 'section'
+        section > span:nth-of-type(2) {
+            color: #ff0;
+            background-color: #f77;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
