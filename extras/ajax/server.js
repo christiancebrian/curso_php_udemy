@@ -1,3 +1,10 @@
+/**
+ * Meios de acesso aos dados enviado na Middleware
+ * req.body - Neste modo despois da rota seria "/5"
+ * req.query - Neste modo depois da rota seria ":numero=5"
+ * req.params - Neste modo depois da rota seria "/:numero"
+ */
+
 // Frameworks para Javascript
 // Servidor para Javascript
 const express = require('express');
@@ -49,6 +56,14 @@ app.post('/formulario', (req, rs) => {
     resizeBy.send({
         ...req.body,
         id: 1
+    })
+})
+
+// Função paa Axios 2
+app.get('/parOuImpar', (req, res) => {
+    const par = parseInt(req.query.numero) % 2 === 0
+    res.send({
+        resultado: par ? 'par' : 'impar'
     })
 })
 
