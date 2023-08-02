@@ -14,6 +14,23 @@
     <div>2</div>
 
     <script>
-        // ...
+        // Primeira chamada no JQuery
+        $('div').hide(5000).show(5000).fadeOut(5000).fadeIn(5000)
+        // Pegando um elemento DOM
+        console.log($('div').get(0))
+        // Verificando se o objeto está vazio
+        console.log($.isEmptyObject())
+        // Verificando se tal valor está dentro de uma array
+        console.log($.inArray(3, [1, 2, 3]))
+
+        // Criando uma função do tipo plugin
+        $.fn.fundoVerde = function (cor = 'green') {
+            this.css('background-color', cor)
+            // Fazendo retornar o próprio objeto, podendo adicionar a função em um encadeamento
+            return this
+        }
+        // Chamando a função para o 'body'
+        // $('body').fundoVerde('yellow')
+        $('body').fundoVerde()
     </script>
 </body>
