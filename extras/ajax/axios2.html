@@ -25,12 +25,12 @@
             params: {
                 numero: 5
             }
-        }).then(resp => exibirResultado('GET', resp.data))
+        }).then(resp => exibirResultado('get', resp.data))
 
         axios.post('formulario', {
             nome: 'João',
             sobrenome: 'Silva'
-        }).then(resp => exibirResultado('POST', resp.data))
+        }).then(resp => exibirResultado('post', resp.data))
 
     </script>
 </body>

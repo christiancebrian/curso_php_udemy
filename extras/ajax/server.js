@@ -68,4 +68,4 @@ app.get('/parOuImpar', (req, res) => {
 })
 
 // Resposta para teste se servidor estiver ok; porta: 8171
-app.listen(8171, () => console.log('Executando...'));
+app.listen(8080, () => console.log('Executando...'));
