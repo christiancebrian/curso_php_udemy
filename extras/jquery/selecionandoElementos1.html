@@ -49,6 +49,34 @@
     </form>
 
     <script>
-        // ...
+        // Pegando por ID
+        $('#feira').addClass('destaque').removeClass('destaque')
+        // Pegando por elemento
+        $('li').addClass('destaque').removeClass('destaque')
+        // Pegando por atributo
+        $('[wm-obrigatorio]').addClass('destaque').removeClass('destaque')
+
+        // Exclusivos JQuery | Função CSS
+        // Pegando primeiro elemento
+        $('li:first').css('border', 'solid 3px yellow')
+        // Pegando os de indeces impares
+        $('li:odd').css('border', 'solid 10px orange')
+        // Pegando depois do indice informado
+        $('li:gt(1)').css('border', 'solid 10px white')
+        // Pegando os elementos que não seja o último
+        $('li:not(:last)').css('border', 'none')
+        // Pegando elemento que contém em seu conteúdo
+        $('li:contains("r")').css('background-color', 'black')
+
+        // Trabalhando com formulário
+        // Pegando o elemento 'form' e todos internos
+        $('form *').hide()
+        // Pegando elemento 'text', é necessário o espaço após o elemento pai para informar que se trata de um elemento interno
+        $('form :text').show()
+        $('form :password').show()
+        $('form :checkbox').show()
+        $('form :radio').show()
+        $('form :file').show()
+
     </script>
 </body>
