@@ -17,6 +17,33 @@
     <p class='numero'>5</p>
 
     <script>
-        // ...
+        // Conteudo DIV1
+        $('#div1').append(', 2');
+        $('#div1').prepend('0, ');
+        // Invertendo
+        $('<strong>, 3</strong>').appendTo('#div1');
+        $('<span>-1, </span>').prependTo('#div1');
+
+        // Conteudo DIV2
+        $('#div2').before('<p>Antes da DIV 2</p>');
+        $('#div2').after('<p>Depois da DIV 2</p>');
+        // Ivertendo
+        $('<p>Antes da DIV 3</p>').insertBefore('#div3');
+        $('<p>Depois da DIV 3</p>').insertAfter('#div3');
+
+        // Envelopando cada elemento 'p' que contem a classe 'numero' dentro de uma 'div'
+        // $('p.numero').wrap('<div id="div4">');
+        // Envelopando todos os elementos 'p' com a classe 'numero' desntro de uma única 'div'
+        $('p.numero').wrapAll('<div id="div4">');
+
+        // Limpando 'div'
+        $('#div4').empty();
+        // Selecionando duas 'div'
+        $('#div3, #div4').prev().remove();
+
+        // Substituindo elementos
+        // $('<div>SUBSTITUIDO</div>').replaceAll('body > p');
+        // Ivertido
+        $('body > p').replaceWith('<div>SUBSTITUIDO</div>');
     </script>
 </body>
