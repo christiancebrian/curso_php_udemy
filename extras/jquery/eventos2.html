@@ -21,6 +21,25 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        const alternarDestaque = () => $('#div1').toggleClass('destaque');
+        // $('#div1').on('mouseenter mouseleave',alternarDestaque); // Chamando função em mais de um evento (entrar e sair do mouse)
+        $('#div1').hover(alternarDestaque, alternarDestaque); // pode se ter duas funções, uma na entrada e outra na saída.
+        $('#div1').one('mouseenter', e => alert('Aviso IMPORTANTE: Observação única.'));
+        $('#div1').dblclick(e => $('#div1').fadeOut(1000).fadeIn(1000)); // Duplo clique
+
+        // Função que adiciona o valor do tamanho da tela em '#resultado1' quando a mudança de seu tamanho
+        $(window).resize(function (e) {
+            const l = $(window).width();
+            const a = $(window).height();
+            $('#resultado1').html(`Largura: ${l} | Altura: ${a}`);
+        });
+
+        // ':input' pega todos os elementos 'input'
+        // Função 'select' é acionado quando há uma seleção
+        $(':input').select(e => {
+            const inicio = e.target.selectionStart; // Pega o primeiro valor da seleção
+            const final = e.target.selectionEnd; // Pega o primeiro valor da seleção
+            $('#resultado2').html(e.target.value.substring(inicio, final));
+        });
     </script>
 </body>
