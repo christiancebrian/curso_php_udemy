@@ -1,0 +1,1 @@
+-- Inserindo registros na tabela empresas
