@@ -8,7 +8,7 @@ CREATE TABLE
         regiao ENUM(
             'Norte',
             'Nordeste',
-            'Centro Oeste',
+            'Centro-Oeste',
             'Sudeste',
             'Sul'
         ) NOT NULL,
